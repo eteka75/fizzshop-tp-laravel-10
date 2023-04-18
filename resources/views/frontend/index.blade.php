@@ -440,14 +440,14 @@
                             <!-- content -->
                             <a href="{{url('/')}}" class="mb-4 d-block">Bakery Biscuits</a>
                             <!-- heading -->
-                            <h1 class="mb-1">Napolitanke Ljesnjak </h1>
+                            <h1 class="mb-1">Napolitanke </h1>
                             <div class="mb-4">
                                 <!-- rating -->
                                 <!-- rating --> <small class="text-warning"> <i class="bi bi-star-fill"></i>
                                     <i class="bi bi-star-fill"></i>
                                     <i class="bi bi-star-fill"></i>
                                     <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-half"></i></small><a href="#" class="ms-2">(30 reviews)</a>
+                                    <i class="bi bi-star-half"></i></small><a href="#" class="ms-2">(30 avis)</a>
                             </div>
                             <div class="fs-4">
                                 <!-- price --><span class="fw-bold text-dark">$32</span> <span
@@ -560,10 +560,10 @@
                             <!-- nav item -->
                             <li class="nav-item" role="presentation">
                                 <!-- btn -->
-                                <button class="nav-link active" id="reviews-tab" data-bs-toggle="tab"
-                                        data-bs-target="#reviews-tab-pane" type="button" role="tab"
-                                        aria-controls="reviews-tab-pane"
-                                        aria-selected="true">Reviews
+                                <button class="nav-link active" id="avis-tab" data-bs-toggle="tab"
+                                        data-bs-target="#avis-tab-pane" type="button" role="tab"
+                                        aria-controls="avis-tab-pane"
+                                        aria-selected="true">avis
                                 </button>
                             </li>
 
@@ -704,8 +704,8 @@
                                 </div>
                             </div>
                             <!-- tab pane -->
-                            <div class="tab-pane fade  show active" id="reviews-tab-pane" role="tabpanel"
-                                 aria-labelledby="reviews-tab" tabindex="0">
+                            <div class="tab-pane fade  show active" id="avis-tab-pane" role="tabpanel"
+                                 aria-labelledby="avis-tab" tabindex="0">
                                 <div class="my-8">
                                     <!-- row -->
                                     <div class="row" >
@@ -716,12 +716,9 @@
                                                     <!-- title -->
 
                                                     <span>
-                          <!-- rating --> <small class="text-warning"> <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-half"></i></small><span class="ms-3">4.1 out of 5</span><small
-                                                            class="ms-3">11,130 global ratings</small></span>
+                          <!-- rating --> {!!  Helper::displayStar($moyenne)!!}
+                                                        <span class="ms-3">{{isset($moyenne)?$moyenne:0}} sur 5</span><small
+                                                            class="ms-3 badge bg-secondary">{{$nb_avis}} avis au total</small></span>
                                                 </div>
                                                 <div class="mb-8">
                                                     <!-- progress -->
@@ -733,12 +730,12 @@
                                                         <div class="w-100">
                                                             <div class="progress" style="height: 6px;">
                                                                 <div class="progress-bar bg-warning" role="progressbar"
-                                                                     style="width: 60%;"
-                                                                     aria-valuenow="60" aria-valuemin="0"
+                                                                     style="width: {{$p_nb_avis5}}%;"
+                                                                     aria-valuenow="{{$p_nb_avis5}}" aria-valuemin="0"
                                                                      aria-valuemax="100"></div>
                                                             </div>
                                                         </div>
-                                                        <span class="text-muted ms-3">53%</span>
+                                                        <span class="text-muted ms-3">{{$p_nb_avis5}}%</span>
                                                     </div>
                                                     <!-- progress -->
                                                     <div class="d-flex align-items-center mb-2">
@@ -749,12 +746,12 @@
                                                         <div class="w-100">
                                                             <div class="progress" style="height: 6px;">
                                                                 <div class="progress-bar bg-warning" role="progressbar"
-                                                                     style="width: 50%;"
-                                                                     aria-valuenow="50" aria-valuemin="0"
-                                                                     aria-valuemax="50"></div>
+                                                                     style="width: {{$p_nb_avis4}}%;"
+                                                                     aria-valuenow="{{$p_nb_avis4}}" aria-valuemin="0"
+                                                                     aria-valuemax="100"></div>
                                                             </div>
                                                         </div>
-                                                        <span class="text-muted ms-3">22%</span>
+                                                        <span class="text-muted ms-3">{{$p_nb_avis4}}%</span>
                                                     </div>
                                                     <!-- progress -->
                                                     <div class="d-flex align-items-center mb-2">
@@ -765,12 +762,12 @@
                                                         <div class="w-100">
                                                             <div class="progress" style="height: 6px;">
                                                                 <div class="progress-bar bg-warning" role="progressbar"
-                                                                     style="width: 35%;"
-                                                                     aria-valuenow="35" aria-valuemin="0"
-                                                                     aria-valuemax="35"></div>
+                                                                     style="width: {{$p_nb_avis3}}%;"
+                                                                     aria-valuenow="{{$p_nb_avis3}}" aria-valuemin="0"
+                                                                     aria-valuemax="100"></div>
                                                             </div>
                                                         </div>
-                                                        <span class="text-muted ms-3">14%</span>
+                                                        <span class="text-muted ms-3">{{$p_nb_avis3}}%</span>
                                                     </div>
                                                     <!-- progress -->
                                                     <div class="d-flex align-items-center mb-2">
@@ -781,12 +778,12 @@
                                                         <div class="w-100">
                                                             <div class="progress" style="height: 6px;">
                                                                 <div class="progress-bar bg-warning" role="progressbar"
-                                                                     style="width: 22%;"
-                                                                     aria-valuenow="22" aria-valuemin="0"
-                                                                     aria-valuemax="22"></div>
+                                                                     style="width: {{$p_nb_avis2}}%;"
+                                                                     aria-valuenow="{{$p_nb_avis2}}" aria-valuemin="0"
+                                                                     aria-valuemax="{{$p_nb_avis2}}"></div>
                                                             </div>
                                                         </div>
-                                                        <span class="text-muted ms-3">5%</span>
+                                                        <span class="text-muted ms-3">{{$p_nb_avis2}}%</span>
                                                     </div>
                                                     <!-- progress -->
                                                     <div class="d-flex align-items-center mb-2">
@@ -797,12 +794,12 @@
                                                         <div class="w-100">
                                                             <div class="progress" style="height: 6px;">
                                                                 <div class="progress-bar bg-warning" role="progressbar"
-                                                                     style="width: 14%;"
-                                                                     aria-valuenow="14" aria-valuemin="0"
-                                                                     aria-valuemax="14"></div>
+                                                                     style="width: {{$p_nb_avis1}}%;"
+                                                                     aria-valuenow="{{$p_nb_avis1}}" aria-valuemin="0"
+                                                                     aria-valuemax="{{$p_nb_avis1}}"></div>
                                                             </div>
                                                         </div>
-                                                        <span class="text-muted ms-3">7%</span>
+                                                        <span class="text-muted ms-3">{{$p_nb_avis1}}%</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -928,20 +925,29 @@
                                             </div>
                                             <div class="mb-10">
                                                 <div class="d-flex justify-content-between align-items-center mb-8">
-                                                    <div>
+                                                    <div class="col-md-4">
                                                         <!-- heading -->
                                                         <h4>Avis</h4>
                                                     </div>
-                                                    <div>
-                                                        <select class="form-select">
-                                                            <option selected value="nc">Note croissant</option>
-                                                            <option value="nc">Note décroissant</option>
-                                                            <option value="1">au moins 1 étoile</option>
-                                                            <option value="2">au moins 2 étoiles</option>
-                                                            <option value="3">au moins 3 étoiles</option>
-                                                            <option value="4">au moins 4 étoiles</option>
-                                                            <option value="5">au moins 5 étoiles</option>
+                                                    <div class="col-md-5 text-sm text-muted text-end">{{$msg??$msg}}</div>
+                                                    <div >
+
+                                                        <form action="{{url('')}}" method="GET">
+                                                            <input type="hidden" name="page" value="{{Request::get('page')>1?Request::get('page'):1}}">
+
+                                                            <select name="orderby" class="form-select" onchange="this.form.submit()">
+                                                            <option value="date_asc" @selected($keyword=="date_asc")>Date croissant</option>
+                                                            <option value="date_desc" @selected($keyword=="date_desc")>Date décroissant</option>
+                                                            <option  value="star_asc" @selected($keyword=="star_asc")>Note croissant</option>
+                                                            <option value="star_desc" @selected($keyword=="star_desc")>Note décroissant</option>
+
+                                                            <option value="1" @selected($keyword=="1")> 1 étoile</option>
+                                                            <option value="2" @selected($keyword=="2")> 2 étoiles</option>
+                                                            <option value="3" @selected($keyword=="3")> 3 étoiles</option>
+                                                            <option value="4" @selected($keyword=="4")> 4 étoiles</option>
+                                                            <option value="5" @selected($keyword=="5")> 5 étoiles</option>
                                                         </select>
+                                                        </form>
                                                     </div>
 
                                                 </div>
@@ -968,58 +974,32 @@
                                                             </p>
                                                             <!-- rating -->
                                                             <div class=" mb-2">
-                                                                @for($i=1;$i<=5;$i++)
-                                                                    @if($i<=intval($avi->note))
-                                                                    <i class="bi bi-star-fill text-warning"></i>
-                                                                    @else
-                                                                        <i class="bi bi-star text-warning"></i>
-                                                                        @endif
-                                                                @endfor
+                                                                {!!  Helper::displayStar($avi->note)!!}
 
 
                                                                 <span class="ms-3 text-dark fw-bold">{{$avi->commentaire}}</span>
                                                             </div>
                                                             <!-- text-->
-                                                            <p> {{nl2br($avi->description)}}</p>
-                                                            <div>
-                                                                <div class="border icon-shape icon-lg border-2 ">
-                                                                    <!-- img --><img
-                                                                        src="{{asset('storage/assets/images/products/product-img-1.jpg')}}"
-                                                                        alt=""
-                                                                        class="img-fluid ">
-                                                                </div>
-                                                                <div class="border icon-shape icon-lg border-2 ms-1 ">
-                                                                    <!-- img --><img
-                                                                        src="{{asset('storage/assets/images/products/product-img-2.jpg')}}"
-                                                                        alt=""
-                                                                        class="img-fluid ">
-                                                                </div>
-                                                                <div class="border icon-shape icon-lg border-2 ms-1 ">
-                                                                    <!-- img --><img
-                                                                        src="{{asset('storage/assets/images/products/product-img-3.jpg')}}"
-                                                                        alt=""
-                                                                        class="img-fluid ">
-                                                                </div>
+                                                            <p> {{($avi->description)}}</p>
 
-                                                            </div>
                                                             <!-- icon -->
                                                             <div class="d-flex justify-content-end mt-4">
                                                                 <a href="#" class="text-muted"><i
-                                                                        class="feather-icon icon-thumbs-up me-1"></i>Helpful</a>
-                                                                <a href="#" class="text-muted ms-4"><i
-                                                                        class="feather-icon icon-flag me-2"></i>Report
-                                                                    abuse</a>
+                                                                        class="feather-icon icon-thumbs-up mx-2"></i></a>
+                                                                <a href="#" class="text-muted"><i
+                                                                        class="feather-icon icon-thumbs-down mx-2"></i></a>
+
                                                             </div>
                                                         </div>
                                             </div>
 
                                         @empty
-                                                        <div class="p-4 text-center">Aucun avis pour le moment !</div>
+                                                        <div class="p-4 bg-light rounded-2 shadow-1 text-center">Aucun avis pour le moment !</div>
                                                     @endforelse
                                                 @endisset
                                                 <div class="row">
-                                                    <div class="col-md-12">
-                                                        {{$avis->links()}}
+                                                    <div class="col-md-12 text-end">
+                                                        {{$avis->withQueryString()->links() }}
                                                     </div>
                                                 </div>
 
@@ -1144,7 +1124,7 @@
                                 </div>
                                 <!-- heading -->
                                 <div class="text-small mb-1"><a href="{{url('/')}}"
-                                                                class="text-decoration-none text-muted"><small>Bakery &
+                                                                class="text-decoration-none text-muted"><small>
                                             Biscuits</small></a></div>
                                 <h2 class="fs-6"><a href="{{url('/')}}" class="text-inherit text-decoration-none">NutriChoice
                                         Digestive </a></h2>
@@ -1355,174 +1335,7 @@
         </section>
 
     </main>
-    <!-- Footer -->
-    <!-- footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row g-4 py-4">
-                <div class="col-12 col-md-12 col-lg-4">
-                    <h6 class="mb-4">Categories</h6>
-                    <div class="row">
-                        <div class="col-6">
-                            <!-- list -->
-                            <ul class="nav flex-column">
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Vegetables & Fruits</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link"> Breakfast & instant food</a>
-                                </li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link"> Bakery & Biscuits</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Atta, rice & dal</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Sauces & spreads</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Organic & gourmet</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link"> Baby care</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Cleaning essentials</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Personal care</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-6">
-                            <!-- list -->
-                            <ul class="nav flex-column">
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Dairy, bread & eggs</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link"> Cold drinks & juices</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link"> Tea, coffee & drinks</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Masala, oil & more</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Chicken, meat & fish</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Paan corner</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link"> Pharma & wellness</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Home & office</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Pet care</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-12 col-lg-8">
-                    <div class="row g-4">
-                        <div class="col-6 col-sm-6 col-md-3">
-                            <h6 class="mb-4">Get to know us</h6>
-                            <!-- list -->
-                            <ul class="nav flex-column">
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Company</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">About</a></li>
-                                <li class="nav-item mb-2"><a href="#1" class="nav-link">Blog</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Help Center</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Our Value</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-6 col-sm-6 col-md-3">
-                            <h6 class="mb-4">For Consumers</h6>
-                            <ul class="nav flex-column">
-                                <!-- list -->
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Payments</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Shipping</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Product Returns</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">FAQ</a></li>
-                                <li class="nav-item mb-2"><a href="shop-checkout.html" class="nav-link">Shop
-                                        Checkout</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-6 col-sm-6 col-md-3">
-                            <h6 class="mb-4">Become a Shopper</h6>
-                            <ul class="nav flex-column">
-                                <!-- list -->
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Shopper Opportunities</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Become a Shopper</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Earnings</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Ideas & Guides</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">New Retailers</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-6 col-sm-6 col-md-3">
-                            <h6 class="mb-4">Freshcart programs</h6>
-                            <ul class="nav flex-column">
-                                <!-- list -->
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Freshcart programs</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Gift Cards</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Promos & Coupons</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Freshcart Ads</a></li>
-                                <li class="nav-item mb-2"><a href="{{url('/')}}" class="nav-link">Careers</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="border-top py-4">
-                <div class="row align-items-center">
-                    <div class="col-lg-5 text-lg-start text-center mb-2 mb-lg-0">
-                        <ul class="list-inline mb-0">
-                            <li class="list-inline-item text-dark">Payment Partners</li>
-                            <li class="list-inline-item">
-                                <a href="{{url('/')}}"><img src="{{asset('storage/assets/images/payment/amazonpay.svg')}}" alt=""></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="{{url('/')}}"><img src="{{asset('storage/assets/images/payment/american-express.svg')}}"
-                                                  alt=""></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="{{url('/')}}"><img src="{{asset('storage/assets/images/payment/mastercard.svg')}}"
-                                                  alt=""></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="{{url('/')}}"><img src="{{asset('storage/assets/images/payment/paypal.svg')}}"
-                                                  alt=""></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="{{url('/')}}"><img src="{{asset('storage/assets/images/payment/visa.svg')}}" alt=""></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-7 mt-4 mt-md-0">
-                        <ul class="list-inline mb-0 text-lg-end text-center">
-                            <li class="list-inline-item mb-2 mb-md-0 text-dark">Get deliveries with FreshCart</li>
-                            <li class="list-inline-item ms-4">
-                                <a href="{{url('/')}}"> <img src="{{asset('storage/assets/images/appbutton/appstore-btn.svg')}}"
-                                                   alt=""
-                                                   style="width: 140px;"></a></li>
-                            <li class="list-inline-item">
-                                <a href="{{url('/')}}"> <img src="{{asset('storage/assets/images/appbutton/googleplay-btn.svg')}}"
-                                                   alt=""
-                                                   style="width: 140px;"></a></li>
-                        </ul>
-                    </div>
-                </div>
 
-            </div>
-            <div class="border-top py-4">
-                <div class="row align-items-center">
-                    <div class="col-md-6"><span class="small text-muted">Copyright 2023 © FreshCart eCommerce HTML Template.  All rights reserved. Powered by <a
-                                href="https://codescandy.com/">Codescandy</a>.</span></div>
-                    <div class="col-md-6">
-                        <ul class="list-inline text-md-end mb-0 small mt-3 mt-md-0">
-                            <li class="list-inline-item text-muted">Follow us on</li>
-                            <li class="list-inline-item me-1">
-                                <a href="{{url('/')}}" class="btn btn-xs btn-social btn-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                         class="bi bi-facebook" viewBox="0 0 16 16">
-                                        <path
-                                            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-                                    </svg>
-                                </a></li>
-                            <li class="list-inline-item me-1">
-                                <a href="{{url('/')}}" class="btn btn-xs btn-social btn-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                         class="bi bi-twitter" viewBox="0 0 16 16">
-                                        <path
-                                            d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
-                                    </svg>
-                                </a></li>
-                            <li class="list-inline-item">
-                                <a href="{{url('/')}}" class="btn btn-xs btn-social btn-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                         class="bi bi-instagram" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
-                                    </svg>
-                                </a></li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </footer>
     <!-- modal -->
     <!-- Modal -->
     <div class="modal fade" id="quickViewModal" tabindex="-1" aria-hidden="true">
@@ -1645,7 +1458,7 @@
                         <div class="col-lg-6">
                             <div class="ps-lg-8 mt-6 mt-lg-0">
                                 <a href="{{url('/')}}" class="mb-4 d-block">Bakery Biscuits</a>
-                                <h2 class="mb-1 h1">Napolitanke Ljesnjak</h2>
+                                <h2 class="mb-1 h1">Napolitanke </h2>
                                 <div class="mb-4">
                                     <small class="text-warning">
                                         <i class="bi bi-star-fill"></i>
@@ -1653,7 +1466,7 @@
                                         <i class="bi bi-star-fill"></i>
                                         <i class="bi bi-star-fill"></i>
                                         <i class="bi bi-star-half"></i></small
-                                    ><a href="#" class="ms-2">(30 reviews)</a>
+                                    ><a href="#" class="ms-2">(30 avis)</a>
                                 </div>
                                 <div class="fs-4">
                                     <span class="fw-bold text-dark">$32</span>
